@@ -170,15 +170,205 @@ public class VoiceCommandManager : MonoBehaviour
 
 
         //--- Comandos de itens
+        //ovo
         comandos.Add("pegar ovo", () => ReceitaManager.JogadorPegou("ovo"));
+        comandos.Add("pegar o ovo", () => ReceitaManager.JogadorPegou("ovo"));
+        comandos.Add("pegue ovo", () => ReceitaManager.JogadorPegou("ovo"));
+        comandos.Add("pegue o ovo", () => ReceitaManager.JogadorPegou("ovo"));
+        comandos.Add("pega ovo", () => ReceitaManager.JogadorPegou("ovo"));
+        comandos.Add("pega o ovo", () => ReceitaManager.JogadorPegou("ovo"));
+
+        //leite
         comandos.Add("pegar leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pegar o leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pegue leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pegue o leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pega leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pega o leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pegar a caixa de leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pegue a caixa de leite", () => ReceitaManager.JogadorPegou("leite"));
+        comandos.Add("pega a caixa de leite", () => ReceitaManager.JogadorPegou("leite"));
+
+
+        //chocolate
         comandos.Add("pegar chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+        comandos.Add("pegar o chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+        comandos.Add("pegue chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+        comandos.Add("pegue o chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+        comandos.Add("pega chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+        comandos.Add("pega o chocolate", () => ReceitaManager.JogadorPegou("chocolate"));
+
+        //cenoura
+        comandos.Add("pegar cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        comandos.Add("pegar a cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        comandos.Add("pegue cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        comandos.Add("pegue a cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        comandos.Add("pega cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        comandos.Add("pega a cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+
+
+        //água de coco 
+        comandos.Add("pegar água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pegar a água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pegue água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pegue a água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pega água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pega a água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pegar a caixa de água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pegue a caixa de água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+        comandos.Add("pega a caixa de água de coco", () => ReceitaManager.JogadorPegou("água de coco"));
+
+        //refrigerante de uva
+        comandos.Add("pegar refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+        comandos.Add("pegar o refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+        comandos.Add("pegue refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+        comandos.Add("pegue o refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+        comandos.Add("pega refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+        comandos.Add("pega o refrigerante de uva", () => ReceitaManager.JogadorPegou("refrigerante de uva"));
+
+        //banana
+        comandos.Add("pegar banana", () => ReceitaManager.JogadorPegou("banana"));
+        comandos.Add("pegar a banana", () => ReceitaManager.JogadorPegou("banana"));
+        comandos.Add("pegue banana", () => ReceitaManager.JogadorPegou("banana"));
+        comandos.Add("pegue a banana", () => ReceitaManager.JogadorPegou("banana"));
+        comandos.Add("pega banana", () => ReceitaManager.JogadorPegou("banana"));
+        comandos.Add("pega a banana", () => ReceitaManager.JogadorPegou("banana"));
+
+
+        //maçã
+        comandos.Add("pegar maçã", () => ReceitaManager.JogadorPegou("maçã"));
+        comandos.Add("pegar a maçã", () => ReceitaManager.JogadorPegou("maçã"));
+        comandos.Add("pegue maçã", () => ReceitaManager.JogadorPegou("maçã"));
+        comandos.Add("pegue a maçã", () => ReceitaManager.JogadorPegou("maçã"));
+        comandos.Add("pega maçã", () => ReceitaManager.JogadorPegou("maçã"));
+        comandos.Add("pega a maçã", () => ReceitaManager.JogadorPegou("maçã"));
+
+        //morango
+        comandos.Add("pegar morango", () => ReceitaManager.JogadorPegou("morango"));
+        comandos.Add("pegar o morango", () => ReceitaManager.JogadorPegou("morango"));
+        comandos.Add("pegue morango", () => ReceitaManager.JogadorPegou("morango"));
+        comandos.Add("pegue o morango", () => ReceitaManager.JogadorPegou("morango"));
+        comandos.Add("pega morango", () => ReceitaManager.JogadorPegou("morango"));
+        comandos.Add("pega o morango", () => ReceitaManager.JogadorPegou("morango"));
+
+        //água
+        comandos.Add("pegar água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pegar a água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pegue água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pegue a água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pega água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pega a água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pegar a garrafa de água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pegue a garrafa de água", () => ReceitaManager.JogadorPegou("água"));
+        comandos.Add("pega a garrafa de água", () => ReceitaManager.JogadorPegou("água"));
+
+        //batata 
+        comandos.Add("pegar batata", () => ReceitaManager.JogadorPegou("batata"));
+        comandos.Add("pegar a batata", () => ReceitaManager.JogadorPegou("batata"));
+        comandos.Add("pegue batata", () => ReceitaManager.JogadorPegou("batata"));
+        comandos.Add("pegue a batata", () => ReceitaManager.JogadorPegou("batata"));
+        comandos.Add("pega batata", () => ReceitaManager.JogadorPegou("batata"));
+        comandos.Add("pega a batata", () => ReceitaManager.JogadorPegou("batata"));
+
+
+        //cebola
+        comandos.Add("pegar cebola", () => ReceitaManager.JogadorPegou("cebola"));
+        comandos.Add("pegar a cebola", () => ReceitaManager.JogadorPegou("cebola"));
+        comandos.Add("pegue cebola", () => ReceitaManager.JogadorPegou("cebola"));
+        comandos.Add("pegue a cebola", () => ReceitaManager.JogadorPegou("cebola"));
+        comandos.Add("pega cebola", () => ReceitaManager.JogadorPegou("cebola"));
+        comandos.Add("pega a cebola", () => ReceitaManager.JogadorPegou("cebola"));
+
+        //pão
+        comandos.Add("pegar pão", () => ReceitaManager.JogadorPegou("pão"));
+        comandos.Add("pegar o pão", () => ReceitaManager.JogadorPegou("pão"));
+        comandos.Add("pegue pão", () => ReceitaManager.JogadorPegou("pão"));
+        comandos.Add("pegue o pão", () => ReceitaManager.JogadorPegou("pão"));
+        comandos.Add("pega pão", () => ReceitaManager.JogadorPegou("pão"));
+        comandos.Add("pega o pão", () => ReceitaManager.JogadorPegou("pão"));
+
+        //alho
+        comandos.Add("pegar alho", () => ReceitaManager.JogadorPegou("alho"));
+        comandos.Add("pegar o alho", () => ReceitaManager.JogadorPegou("alho"));
+        comandos.Add("pegue alho", () => ReceitaManager.JogadorPegou("alho"));
+        comandos.Add("pegue o alho", () => ReceitaManager.JogadorPegou("alho"));
+        comandos.Add("pega alho", () => ReceitaManager.JogadorPegou("alho"));
+        comandos.Add("pega o alho", () => ReceitaManager.JogadorPegou("alho"));
+
+        //limão
+        comandos.Add("pegar limão", () => ReceitaManager.JogadorPegou("limão"));
+        comandos.Add("pegar o limão", () => ReceitaManager.JogadorPegou("limão"));
+        comandos.Add("pegue limão", () => ReceitaManager.JogadorPegou("limão"));
+        comandos.Add("pegue o limão", () => ReceitaManager.JogadorPegou("limão"));
+        comandos.Add("pega limão", () => ReceitaManager.JogadorPegou("limão"));
+        comandos.Add("pega o limão", () => ReceitaManager.JogadorPegou("limão"));
+
+
+        //milho
+        comandos.Add("pegar milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pegar o milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pegue milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pegue o milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pega milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pega o milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pega a espiga de milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pegar a espiga de milho", () => ReceitaManager.JogadorPegou("milho"));
+        comandos.Add("pegue a espiga de milho", () => ReceitaManager.JogadorPegou("milho"));
+
+
+
+        //óleo
+        comandos.Add("pegar óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pegar o óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pegue óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pegue o óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pega óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pega o óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pegar a garrafa de óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pegue a garrafa de óleo", () => ReceitaManager.JogadorPegou("óleo"));
+        comandos.Add("pega a garrafa de óleo", () => ReceitaManager.JogadorPegou("óleo"));
+
+
+        //farinha de trigo
+        comandos.Add("pegar farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pegar a farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pegue farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pegue a farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pega farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pega a farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pega o saco de farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pegar o saco de farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+        comandos.Add("pegue o saco de farinha de trigo", () => ReceitaManager.JogadorPegou("farinha de trigo"));
+
+
+        //azeite
+        comandos.Add("pegar azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pegar o azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pegue azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pegue o azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pega azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pega o azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pegar a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pegue a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
+        comandos.Add("pega a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
+
         comandos.Add("pegar frutas", () => ReceitaManager.JogadorPegou("frutas"));
         comandos.Add("pegar baunilha", () => ReceitaManager.JogadorPegou("baunilha"));
-        comandos.Add("pegar cenoura", () => ReceitaManager.JogadorPegou("cenoura"));
+        
 
         // Comando de finalizar
         comandos.Add("finalizar receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("finalizar a receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("finaliza receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("finaliza a receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("terminar receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("terminar a receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("termina a receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("termina receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("encerrar receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("encerrar a receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("encerra receita", () => ReceitaManager.FinalizarReceita());
+        comandos.Add("encerra a receita", () => ReceitaManager.FinalizarReceita());
 
 
 

@@ -8,7 +8,7 @@ public class ReceitaManager : MonoBehaviour
     private List<string> ingredientesPegos; 
     private int pontos;
 
-    private List<string> possiveisExtras = new List<string> { "chocolate", "frutas", "baunilha", "cenoura" };
+    private List<string> possiveisExtras = new List<string> { "chocolate", "banana", "maçã", "morango", "cenoura" };
 
     public TextMeshProUGUI receitaText;
 
@@ -77,27 +77,58 @@ public class ReceitaManager : MonoBehaviour
             {
                 pontos += 3;
                 Debug.Log($" Pegou {ingrediente} na ordem certa (+3 pontos)");
+                DesativarIngrediente(ingrediente);
             }
             else if (receitaCorreta.Contains(ingrediente))
             {
                 pontos += 1;
+                DesativarIngrediente(ingrediente);
                 Debug.Log($" Pegou {ingrediente}, mas fora de ordem (+1 ponto)");
+
             }
             else
             {
+                DesativarIngrediente(ingrediente);
                 Debug.Log($" {ingrediente} não faz parte da receita (0 pontos)");
             }
         }
         else
         {
-            Debug.Log($" {ingrediente} extra além da receita (0 pontos)");
+            if (receitaCorreta.Contains(ingrediente))
+            {
+                pontos += 1;
+                Debug.Log($" Pegou {ingrediente}, mas fora de ordem (+1 ponto)");
+                DesativarIngrediente(ingrediente);
+            }
+            else
+            {
+                Debug.Log($" {ingrediente} extra além da receita (0 pontos)");
+                DesativarIngrediente(ingrediente);
+            }
+            
         }
     }
 
 
-
+    
     public void FinalizarReceita()
     {
         Debug.Log($" Receita finalizada! Pontuação: {pontos}");
     }
+    
+    private void DesativarIngrediente(string nomeIngrediente)
+    {
+        Ingrediente[] todos = FindObjectsOfType<Ingrediente>();
+        foreach (Ingrediente ing in todos)
+        {
+            if (ing.nome.ToLower() == nomeIngrediente.ToLower())
+            {
+                ing.gameObject.SetActive(false); // desativa o objeto
+                Debug.Log($"Ingrediente {nomeIngrediente} desativado na cena.");
+                return;
+            }
+        }
+        Debug.LogWarning($"Ingrediente {nomeIngrediente} não encontrado na cena.");
+    }
+    
 }
