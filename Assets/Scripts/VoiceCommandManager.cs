@@ -243,6 +243,14 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pega maçã", () => ReceitaManager.JogadorPegou("maçã"));
         comandos.Add("pega a maçã", () => ReceitaManager.JogadorPegou("maçã"));
 
+        //manteiga
+        comandos.Add("pegar manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+        comandos.Add("pegar a manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+        comandos.Add("pegue manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+        comandos.Add("pegue a manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+        comandos.Add("pega manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+        comandos.Add("pega a manteiga", () => ReceitaManager.JogadorPegou("manteiga"));
+
         //morango
         comandos.Add("pegar morango", () => ReceitaManager.JogadorPegou("morango"));
         comandos.Add("pegar o morango", () => ReceitaManager.JogadorPegou("morango"));
@@ -250,6 +258,39 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pegue o morango", () => ReceitaManager.JogadorPegou("morango"));
         comandos.Add("pega morango", () => ReceitaManager.JogadorPegou("morango"));
         comandos.Add("pega o morango", () => ReceitaManager.JogadorPegou("morango"));
+
+        //abacaxi
+        comandos.Add("pegar abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+        comandos.Add("pegar o abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+        comandos.Add("pegue abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+        comandos.Add("pegue o abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+        comandos.Add("pega abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+        comandos.Add("pega o abacaxi", () => ReceitaManager.JogadorPegou("abacaxi"));
+
+        //cereal
+        comandos.Add("pegar cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pegar o cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pegue cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pegue o cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pega cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pega o cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pega a caixa de cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pegue a caixa de cereal", () => ReceitaManager.JogadorPegou("cereal"));
+        comandos.Add("pegar a caixa de cereal", () => ReceitaManager.JogadorPegou("cereal"));
+
+        //arroz
+        comandos.Add("pegar arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegar o arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegue arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegue o arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pega arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pega o arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pega o pacote de arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegue o pacote a de arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegar o pacote de arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pega o saco de arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegar o saco de arroz", () => ReceitaManager.JogadorPegou("arroz"));
+        comandos.Add("pegue o saco de arroz", () => ReceitaManager.JogadorPegou("arroz"));
 
         //água
         comandos.Add("pegar água", () => ReceitaManager.JogadorPegou("água"));
@@ -303,6 +344,21 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pega limão", () => ReceitaManager.JogadorPegou("limão"));
         comandos.Add("pega o limão", () => ReceitaManager.JogadorPegou("limão"));
 
+        //peixe
+        comandos.Add("pegar peixe", () => ReceitaManager.JogadorPegou("peixe"));
+        comandos.Add("pegar o peixe", () => ReceitaManager.JogadorPegou("peixe"));
+        comandos.Add("pegue peixe", () => ReceitaManager.JogadorPegou("peixe"));
+        comandos.Add("pegue o peixe", () => ReceitaManager.JogadorPegou("peixe"));
+        comandos.Add("pega peixe", () => ReceitaManager.JogadorPegou("peixe"));
+        comandos.Add("pega o peixe", () => ReceitaManager.JogadorPegou("peixe"));
+
+        //tomate
+        comandos.Add("pegar tomate", () => ReceitaManager.JogadorPegou("tomate"));
+        comandos.Add("pegar o tomate", () => ReceitaManager.JogadorPegou("tomate"));
+        comandos.Add("pegue tomate", () => ReceitaManager.JogadorPegou("tomate"));
+        comandos.Add("pegue o tomate", () => ReceitaManager.JogadorPegou("tomate"));
+        comandos.Add("pega tomate", () => ReceitaManager.JogadorPegou("tomate"));
+        comandos.Add("pega o tomate", () => ReceitaManager.JogadorPegou("tomate"));
 
         //milho
         comandos.Add("pegar milho", () => ReceitaManager.JogadorPegou("milho"));
@@ -351,9 +407,6 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pegar a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
         comandos.Add("pegue a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
         comandos.Add("pega a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
-
-        comandos.Add("pegar frutas", () => ReceitaManager.JogadorPegou("frutas"));
-        comandos.Add("pegar baunilha", () => ReceitaManager.JogadorPegou("baunilha"));
         
 
         // Comando de finalizar

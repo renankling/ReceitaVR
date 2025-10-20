@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReceitaManager : MonoBehaviour
 {
@@ -26,11 +28,59 @@ public class ReceitaManager : MonoBehaviour
         pontos = 0;
 
         
-        List<string> baseIngredientes = new List<string> { "ovo", "leite" };
+        List<string> todosIngredientes = new List<string> {
+        "ovo","leite","chocolate","cenoura","água de coco","refrigerante de uva","banana",
+        "maçã","manteiga","morango","abacaxi","cereal","arroz","batata","cebola",
+        "pão","alho","limão","peixe","tomate","milho","óleo","farinha de trigo","azeite"
+    };
+
+        List<string> fixos = new List<string>();
+        int totalIngredientes = 0;
 
         
+        string nomeCena = SceneManager.GetActiveScene().name;
+
+      
+        if (nomeCena == "Cena2") 
+        {
+            fixos = new List<string> { "pão", "manteiga" };
+            possiveisExtras = new List<string> { "leite", "ovo", "banana", "morango", "cereal", "maçã", "água de coco", "limão" };
+            totalIngredientes = 6;
+        }
+        else if (nomeCena == "Cena3") 
+        {
+            fixos = new List<string> { "arroz", "batata" };
+            possiveisExtras = new List<string> { "cebola", "tomate", "alho", "cenoura", "azeite", "peixe", "limão" };
+            totalIngredientes = 8;
+        }
+        else if (nomeCena == "Cena4")
+        {
+            fixos = new List<string> { "peixe", "arroz" };
+            possiveisExtras = new List<string> { "batata", "cebola", "alho", "azeite", "tomate", "milho", "limão", "farinha de trigo", "manteiga", "óleo" };
+            totalIngredientes = 10;
+        }
+        else if (nomeCena == "Cena5") 
+        {
+            fixos = new List<string>();
+            possiveisExtras = new List<string> { "leite", "chocolate", "banana", "morango", "maçã", "abacaxi", "cereal", "água de coco", "pão", "manteiga", "limão", "refrigerante de uva", "ovo" };
+            totalIngredientes = 10;
+        }
+        else 
+        {
+            fixos = new List<string> { "ovo", "leite" };
+            possiveisExtras = new List<string> { "chocolate", "cenoura", "banana", "maçã", "morango" };
+            totalIngredientes = 4;
+        }
+
+    
+        int quantidadeRandom = Mathf.Max(0, totalIngredientes - fixos.Count);
+
+       
+        quantidadeRandom = Mathf.Min(quantidadeRandom, possiveisExtras.Count);
+
+     
         List<string> escolhidos = new List<string>();
-        while (escolhidos.Count < 2)
+        while (escolhidos.Count < quantidadeRandom)
         {
             string ing = possiveisExtras[Random.Range(0, possiveisExtras.Count)];
             if (!escolhidos.Contains(ing))
@@ -39,11 +89,10 @@ public class ReceitaManager : MonoBehaviour
             }
         }
 
-        
-        receitaCorreta.AddRange(baseIngredientes);
+    
+        receitaCorreta.AddRange(fixos);
         receitaCorreta.AddRange(escolhidos);
 
-        
         for (int i = 0; i < receitaCorreta.Count; i++)
         {
             string temp = receitaCorreta[i];
@@ -52,12 +101,15 @@ public class ReceitaManager : MonoBehaviour
             receitaCorreta[randomIndex] = temp;
         }
 
-        Debug.Log("Receita gerada: " + string.Join(", ", receitaCorreta));
+        AtualizarUI();
+        Debug.Log($"Receita gerada ({nomeCena}): {string.Join(", ", receitaCorreta)}");
     }
+
+
 
     private void AtualizarUI()
     {
-        receitaText.text = "Receita:\n";
+        receitaText.text = "";
         for (int i = 0; i < receitaCorreta.Count; i++)
         {
             receitaText.text += (i + 1) + ". " + receitaCorreta[i] + "\n";
