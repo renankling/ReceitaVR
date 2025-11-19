@@ -13,6 +13,7 @@ public class ReceitaManager : MonoBehaviour
     private List<string> possiveisExtras = new List<string> { "chocolate", "banana", "maçã", "morango", "cenoura" };
 
     public TextMeshProUGUI receitaText;
+    private List<string> linhasUI = new List<string>();
 
     void Start()
     {
@@ -109,16 +110,50 @@ public class ReceitaManager : MonoBehaviour
 
     private void AtualizarUI()
     {
-        receitaText.text = "";
+        linhasUI.Clear();
+
         for (int i = 0; i < receitaCorreta.Count; i++)
         {
-            receitaText.text += (i + 1) + ". " + receitaCorreta[i] + "\n";
+            linhasUI.Add($"{i + 1}. {receitaCorreta[i]}");
+        }
+
+        RedesenharUI();
+    }
+
+    private void RedesenharUI()
+    {
+        receitaText.text = "";
+        foreach (string linha in linhasUI)
+        {
+            receitaText.text += linha + "\n";
         }
     }
+
+    private void RiscarIngrediente(string ingrediente)
+    {
+        ingrediente = ingrediente.ToLower();
+
+        for (int i = 0; i < linhasUI.Count; i++)
+        {
+
+            if (linhasUI[i].ToLower().Contains(ingrediente) && !linhasUI[i].Contains("<s>"))
+            {
+                string original = linhasUI[i];
+                string riscado = original.Replace(ingrediente, $"<s>{ingrediente}</s>");
+                linhasUI[i] = riscado;
+                break;
+            }
+        }
+
+        RedesenharUI();
+    }
+
+
     public void JogadorPegou(string ingrediente)
     {
         ingredientesPegos.Add(ingrediente);
         AvaliarIngrediente(ingrediente, ingredientesPegos.Count - 1);
+        RiscarIngrediente(ingrediente);
     }
 
     private void AvaliarIngrediente(string ingrediente, int posicao)
