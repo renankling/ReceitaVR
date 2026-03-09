@@ -14,6 +14,11 @@ public class ReceitaManager : MonoBehaviour
 
     public TextMeshProUGUI receitaText;
     private List<string> linhasUI = new List<string>();
+    public GameObject canvasPontuacao;
+    public TextMeshProUGUI textoPontuacao;
+    public TextMeshProUGUI textoBotaoProximoNivel;
+    public AudioSource telefoneAudio;
+    public AudioClip telefoneClip;
 
     void Start()
     {
@@ -51,7 +56,7 @@ public class ReceitaManager : MonoBehaviour
         else if (nomeCena == "Cena3") 
         {
             fixos = new List<string> { "arroz", "batata" };
-            possiveisExtras = new List<string> { "cebola", "tomate", "alho", "cenoura", "azeite", "peixe", "limão" };
+            possiveisExtras = new List<string> { "cebola", "tomate", "alho", "azeite", "peixe", "limão" };
             totalIngredientes = 8;
         }
         else if (nomeCena == "Cena4")
@@ -63,13 +68,13 @@ public class ReceitaManager : MonoBehaviour
         else if (nomeCena == "Cena5") 
         {
             fixos = new List<string>();
-            possiveisExtras = new List<string> { "leite", "chocolate", "banana", "morango", "maçã", "abacaxi", "cereal", "água de coco", "pão", "manteiga", "limão", "refrigerante de uva", "ovo" };
+            possiveisExtras = new List<string> { "leite", "banana", "morango", "maçã", "abacaxi", "cereal", "água de coco", "pão", "manteiga", "limão", "refrigerante de uva", "ovo" };
             totalIngredientes = 10;
         }
         else 
         {
             fixos = new List<string> { "ovo", "leite" };
-            possiveisExtras = new List<string> { "chocolate", "cenoura", "banana", "maçã", "morango" };
+            possiveisExtras = new List<string> { "limão", "abacaxi", "banana", "maçã", "morango" };
             totalIngredientes = 4;
         }
 
@@ -154,6 +159,16 @@ public class ReceitaManager : MonoBehaviour
         ingredientesPegos.Add(ingrediente);
         AvaliarIngrediente(ingrediente, ingredientesPegos.Count - 1);
         RiscarIngrediente(ingrediente);
+
+        if (SceneManager.GetActiveScene().name == "Cena5" && ingredientesPegos.Count == 5)
+        {
+            TocarTelefone();
+        }
+
+        if (ingredientesPegos.Count >= receitaCorreta.Count)
+        {
+            FinalizarReceita();
+        }
     }
 
     private void AvaliarIngrediente(string ingrediente, int posicao)
@@ -197,12 +212,26 @@ public class ReceitaManager : MonoBehaviour
     }
 
 
-    
+
     public void FinalizarReceita()
     {
-        Debug.Log($" Receita finalizada! Pontuação: {pontos}");
+        Debug.Log($"Receita finalizada! Pontuação: {pontos}");
+
+        canvasPontuacao.SetActive(true);
+        textoPontuacao.text = "Pontuação Final\n" + pontos + " pontos";
+
+        int cenaAtual = SceneManager.GetActiveScene().buildIndex;
+
+        if (cenaAtual == 4)
+        {
+            textoBotaoProximoNivel.text = "Jogar Novamente";
+        }
+        else
+        {
+            textoBotaoProximoNivel.text = "Próximo Nível";
+        }
     }
-    
+
     private void DesativarIngrediente(string nomeIngrediente)
     {
         Ingrediente[] todos = FindObjectsOfType<Ingrediente>();
@@ -210,12 +239,32 @@ public class ReceitaManager : MonoBehaviour
         {
             if (ing.nome.ToLower() == nomeIngrediente.ToLower())
             {
-                ing.gameObject.SetActive(false); // desativa o objeto
+                ing.gameObject.SetActive(false); 
                 Debug.Log($"Ingrediente {nomeIngrediente} desativado na cena.");
                 return;
             }
         }
         Debug.LogWarning($"Ingrediente {nomeIngrediente} não encontrado na cena.");
     }
-    
+
+    public void ProximoNivel()
+    {
+        int cenaAtual = SceneManager.GetActiveScene().buildIndex;
+
+        if (cenaAtual == 4)
+        {
+
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(cenaAtual + 1);
+        }
+    }
+
+    void TocarTelefone()
+    {
+        telefoneAudio.PlayOneShot(telefoneClip);
+    }
+
 }
