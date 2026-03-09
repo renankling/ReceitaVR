@@ -10,7 +10,7 @@ public class ReceitaManager : MonoBehaviour
     private List<string> ingredientesPegos; 
     private int pontos;
 
-    private List<string> possiveisExtras = new List<string> { "chocolate", "banana", "maçã", "morango", "cenoura" };
+    private List<string> possiveisExtras = new List<string> { "banana", "maçã", "morango" };
 
     public TextMeshProUGUI receitaText;
     private List<string> linhasUI = new List<string>();
