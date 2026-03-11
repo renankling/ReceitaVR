@@ -264,7 +264,17 @@ public class ReceitaManager : MonoBehaviour
 
     void TocarTelefone()
     {
-        telefoneAudio.PlayOneShot(telefoneClip);
+        telefoneAudio.clip = telefoneClip;
+        telefoneAudio.loop = true;
+        telefoneAudio.Play();
     }
 
+    public void PararTelefone()
+    {
+        if (telefoneAudio != null && telefoneAudio.isPlaying)
+        {
+            telefoneAudio.Stop();
+            Debug.Log("Telefone atendido. Som parado.");
+        }
+    }
 }

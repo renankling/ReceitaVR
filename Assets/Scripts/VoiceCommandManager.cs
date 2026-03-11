@@ -102,6 +102,25 @@ public class VoiceCommandManager : MonoBehaviour
             }
         };
 
+
+        // --- Comandos do telefone ---
+        comandos.Add("atender telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("atender o telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("atenda o telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("atenda telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("parar telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("parar o telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("pare telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("pare o telefone", () => ReceitaManager.PararTelefone());
+        comandos.Add("atender celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("atender o celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("atenda o celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("atenda celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("parar celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("parar o celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("pare celular", () => ReceitaManager.PararTelefone());
+        comandos.Add("pare o celular", () => ReceitaManager.PararTelefone());
+
         // --- Comandos para abrir painel ---
         comandos.Add("abrir receita", acaoAbrirPainel);
         comandos.Add("abrir a receita", acaoAbrirPainel);
