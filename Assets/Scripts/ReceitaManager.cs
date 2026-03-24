@@ -9,6 +9,7 @@ public class ReceitaManager : MonoBehaviour
     private List<string> receitaCorreta;     
     private List<string> ingredientesPegos; 
     private int pontos;
+    private int aberturaReceita;
 
     private List<string> possiveisExtras = new List<string> { "banana", "maçã", "morango" };
 
@@ -19,6 +20,7 @@ public class ReceitaManager : MonoBehaviour
     public TextMeshProUGUI textoBotaoProximoNivel;
     public AudioSource telefoneAudio;
     public AudioClip telefoneClip;
+
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class ReceitaManager : MonoBehaviour
         receitaCorreta = new List<string>();
         ingredientesPegos = new List<string>();
         pontos = 0;
+        aberturaReceita = 0;
 
         
         List<string> todosIngredientes = new List<string> {
@@ -218,7 +221,13 @@ public class ReceitaManager : MonoBehaviour
         Debug.Log($"Receita finalizada! Pontuação: {pontos}");
 
         canvasPontuacao.SetActive(true);
-        textoPontuacao.text = "Pontuação Final\n" + pontos + " pontos";
+        int penalidade = Mathf.Max(0, aberturaReceita - 1);
+        int pontuacaoFinal = pontos - penalidade;
+
+        if (pontuacaoFinal < 0)
+            pontuacaoFinal = 0;
+
+        textoPontuacao.text = "Pontuação Final\n" + pontuacaoFinal + " pontos\n";
 
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
@@ -276,5 +285,11 @@ public class ReceitaManager : MonoBehaviour
             telefoneAudio.Stop();
             Debug.Log("Telefone atendido. Som parado.");
         }
+    }
+
+    public void RegistrarAberturaReceita()
+    {
+        aberturaReceita++;
+        Debug.Log("Receita aberta " + aberturaReceita + " vezes");
     }
 }

@@ -23,6 +23,9 @@ public class VoiceCommandManager : MonoBehaviour
     [Header("Receita Manager")]
     public ReceitaManager ReceitaManager;
 
+    [Header("Painel de Informações")]
+    public GameObject painelInformacoes;
+
     void Start()
     {
         Debug.Log("VoiceCommandManager: Start chamado.");
@@ -42,12 +45,32 @@ public class VoiceCommandManager : MonoBehaviour
         // --- Ações do painel ---
         System.Action acaoAbrirPainel = () => {
             painelReceita.SetActive(true);
+
+            ReceitaManager.RegistrarAberturaReceita(); 
+
             Debug.Log("Comando de abertura reconhecido. Painel ativado.");
         };
 
         System.Action acaoFecharPainel = () => {
             painelReceita.SetActive(false);
             Debug.Log("Comando de fechamento reconhecido. Painel desativado.");
+        };
+
+        // --- Ações do painel de informações ---
+        System.Action acaoFecharInformacoes = () => {
+            if (painelInformacoes != null)
+            {
+                painelInformacoes.SetActive(false);
+                Debug.Log("Painel de informações fechado.");
+            }
+        };
+
+        System.Action acaoAbrirInformacoes = () => {
+            if (painelInformacoes != null)
+            {
+                painelInformacoes.SetActive(true);
+                Debug.Log("Painel de informações aberto.");
+            }
         };
 
         // --- Ações da geladeira ---
@@ -441,6 +464,28 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("encerrar a receita", () => ReceitaManager.FinalizarReceita());
         comandos.Add("encerra receita", () => ReceitaManager.FinalizarReceita());
         comandos.Add("encerra a receita", () => ReceitaManager.FinalizarReceita());
+
+        // --- Comandos para abrir informações ---
+        comandos.Add("abrir informacoes", acaoAbrirInformacoes);
+        comandos.Add("abrir informações", acaoAbrirInformacoes);
+        comandos.Add("abrir as informacoes", acaoAbrirInformacoes);
+        comandos.Add("abrir as informações", acaoAbrirInformacoes);
+        comandos.Add("abra informacoes", acaoAbrirInformacoes);
+        comandos.Add("abra informações", acaoAbrirInformacoes);
+        comandos.Add("abre informacoes", acaoAbrirInformacoes);
+        comandos.Add("abre informações", acaoAbrirInformacoes);
+
+        // --- Comandos para fechar informações ---
+        comandos.Add("fechar informacoes", acaoFecharInformacoes);
+        comandos.Add("fechar informações", acaoFecharInformacoes);
+        comandos.Add("fechar as informacoes", acaoFecharInformacoes);
+        comandos.Add("fechar as informações", acaoFecharInformacoes);
+        comandos.Add("feche informacoes", acaoFecharInformacoes);
+        comandos.Add("feche informações", acaoFecharInformacoes);
+        comandos.Add("fecha informacoes", acaoFecharInformacoes);
+        comandos.Add("fecha informações", acaoFecharInformacoes);
+        comandos.Add("informacoes fechar", acaoFecharInformacoes);
+        comandos.Add("informações fechar", acaoFecharInformacoes);
 
 
 
