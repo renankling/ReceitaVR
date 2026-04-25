@@ -21,11 +21,19 @@ public class ReceitaManager : MonoBehaviour
     public AudioSource telefoneAudio;
     public AudioClip telefoneClip;
 
+    public int ingredientesCorretos = 0;
+    public int ingredientesErrados = 0;
+    public int vezesAbriuReceita = 0;
+
+    private float tempoInicio;
+    private float tempoFinal;
+
 
     void Start()
     {
         GerarReceita();
         AtualizarUI();
+        tempoInicio = Time.time;
 
     }
 
@@ -168,12 +176,23 @@ public class ReceitaManager : MonoBehaviour
             TocarTelefone();
         }
 
-        if (ingredientesPegos.Count >= receitaCorreta.Count)
+        if (TodosIngredientesCorretosPegos())
         {
             FinalizarReceita();
         }
     }
+    bool TodosIngredientesCorretosPegos()
+    {
+        foreach (string ingrediente in receitaCorreta)
+        {
+            if (!ingredientesPegos.Contains(ingrediente))
+            {
+                return false;
+            }
+        }
 
+        return true;
+    }
     private void AvaliarIngrediente(string ingrediente, int posicao)
     {
         if (posicao < receitaCorreta.Count)
@@ -181,18 +200,21 @@ public class ReceitaManager : MonoBehaviour
             if (receitaCorreta[posicao] == ingrediente)
             {
                 pontos += 3;
+                ingredientesCorretos++;
                 Debug.Log($" Pegou {ingrediente} na ordem certa (+3 pontos)");
                 DesativarIngrediente(ingrediente);
             }
             else if (receitaCorreta.Contains(ingrediente))
             {
                 pontos += 1;
+                ingredientesErrados++;
                 DesativarIngrediente(ingrediente);
                 Debug.Log($" Pegou {ingrediente}, mas fora de ordem (+1 ponto)");
 
             }
             else
             {
+                ingredientesErrados++;
                 DesativarIngrediente(ingrediente);
                 Debug.Log($" {ingrediente} não faz parte da receita (0 pontos)");
             }
@@ -218,6 +240,12 @@ public class ReceitaManager : MonoBehaviour
 
     public void FinalizarReceita()
     {
+
+        tempoFinal = Time.time;
+
+        float tempoTotal = tempoFinal - tempoInicio;
+
+        Debug.Log("Tempo total: " + tempoTotal);
         Debug.Log($"Receita finalizada! Pontuação: {pontos}");
 
         canvasPontuacao.SetActive(true);
@@ -227,7 +255,7 @@ public class ReceitaManager : MonoBehaviour
         if (pontuacaoFinal < 0)
             pontuacaoFinal = 0;
 
-        textoPontuacao.text = "Pontuação Final\n" + pontuacaoFinal + " pontos\n";
+        textoPontuacao.text = ObterResultado(pontuacaoFinal);
 
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
@@ -291,5 +319,16 @@ public class ReceitaManager : MonoBehaviour
     {
         aberturaReceita++;
         Debug.Log("Receita aberta " + aberturaReceita + " vezes");
+    }
+    public string ObterResultado(int pontuacaoFinal)
+    {
+        float tempoTotal = tempoFinal - tempoInicio;
+
+        return
+            "Pontuação final: " + pontuacaoFinal + "\n\n" +
+            "Ingredientes corretos: " + ingredientesCorretos + "\n" +
+            "Ingredientes fora de ordem: " + ingredientesErrados + "\n" +
+            "Receita aberta: " + aberturaReceita + " vezes\n" +
+            "Tempo total: " + tempoTotal.ToString("F2") + "s";
     }
 }

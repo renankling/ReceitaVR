@@ -15,7 +15,7 @@ public class VoiceCommandManager : MonoBehaviour
     public Animator animatorGeladeira;
     public Animator animatorArmario;
 
-    [Header("Câmeras")]
+    [Header("C?meras")]
     public Camera cameraPrincipal;
     public Camera cameraGeladeira;
     public Camera cameraArmario;
@@ -23,7 +23,7 @@ public class VoiceCommandManager : MonoBehaviour
     [Header("Receita Manager")]
     public ReceitaManager ReceitaManager;
 
-    [Header("Painel de Informações")]
+    [Header("Painel de Informacoes")]
     public GameObject painelInformacoes;
 
     void Start()
@@ -32,21 +32,21 @@ public class VoiceCommandManager : MonoBehaviour
 
         if (painelReceita == null)
         {
-            Debug.LogError("VoiceCommandManager: painelReceita não está atribuído no Inspector!");
+            Debug.LogError("VoiceCommandManager: painelReceita nao esta atribuido no Inspector!");
             return;
         }
 
         if (animatorGeladeira == null)
         {
-            Debug.LogError("VoiceCommandManager: Animator da geladeira não atribuído!");
+            Debug.LogError("VoiceCommandManager: Animator da geladeira nao atribuido!");
             return;
         }
 
-        // --- Ações do painel ---
+        // --- Acoees do painel ---
         System.Action acaoAbrirPainel = () => {
             painelReceita.SetActive(true);
 
-            ReceitaManager.RegistrarAberturaReceita(); 
+            ReceitaManager.RegistrarAberturaReceita();
 
             Debug.Log("Comando de abertura reconhecido. Painel ativado.");
         };
@@ -56,12 +56,12 @@ public class VoiceCommandManager : MonoBehaviour
             Debug.Log("Comando de fechamento reconhecido. Painel desativado.");
         };
 
-        // --- Ações do painel de informações ---
+        // --- Acoes do painel de informa??es ---
         System.Action acaoFecharInformacoes = () => {
             if (painelInformacoes != null)
             {
                 painelInformacoes.SetActive(false);
-                Debug.Log("Painel de informações fechado.");
+                Debug.Log("Painel de informacoes fechado.");
             }
         };
 
@@ -69,46 +69,46 @@ public class VoiceCommandManager : MonoBehaviour
             if (painelInformacoes != null)
             {
                 painelInformacoes.SetActive(true);
-                Debug.Log("Painel de informações aberto.");
+                Debug.Log("Painel de informacoes aberto.");
             }
         };
 
-        // --- Ações da geladeira ---
+        // --- A??es da geladeira ---
         System.Action acaoAbrirGeladeira = () =>
         {
             animatorGeladeira.SetTrigger("AbrirGeladeira");
-            Debug.Log("Animação de abrir geladeira disparada.");
+            Debug.Log("Animacao de abrir geladeira disparada.");
 
             if (cameraPrincipal != null && cameraGeladeira != null)
             {
                 cameraPrincipal.enabled = false;
                 cameraGeladeira.enabled = true;
-                Debug.Log("Câmera da geladeira ativada.");
+                Debug.Log("Camera da geladeira ativada.");
             }
         };
 
         System.Action acaoFecharGeladeira = () =>
         {
             animatorGeladeira.SetTrigger("FecharGeladeira");
-            Debug.Log("Animação de fechar geladeira disparada.");
+            Debug.Log("Animacao de fechar geladeira disparada.");
 
             if (cameraPrincipal != null && cameraGeladeira != null)
             {
                 cameraGeladeira.enabled = false;
                 cameraPrincipal.enabled = true;
-                Debug.Log("Câmera principal reativada.");
+                Debug.Log("Camera principal reativada.");
             }
         };
 
         System.Action acaoAbrirArmario = () =>
         {
             animatorArmario.SetTrigger("AbrirArmario");
-            Debug.Log("Animação de abrir armario disparada.");
+            Debug.Log("Animacao de abrir armario disparada.");
             if (cameraPrincipal != null && cameraArmario != null)
             {
                 cameraArmario.enabled = true;
                 cameraPrincipal.enabled = false;
-                Debug.Log("Câmera principal desativada.");
+                Debug.Log("Camera principal desativada.");
             }
         };
 
@@ -121,7 +121,7 @@ public class VoiceCommandManager : MonoBehaviour
             {
                 cameraArmario.enabled = false;
                 cameraPrincipal.enabled = true;
-                Debug.Log("Câmera principal ativada.");
+                Debug.Log("Camera principal ativada.");
             }
         };
 
@@ -277,7 +277,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pega a banana", () => ReceitaManager.JogadorPegou("banana"));
 
 
-        //maçã
+        //ma??
         comandos.Add("pegar maçã", () => ReceitaManager.JogadorPegou("maçã"));
         comandos.Add("pegar a maçã", () => ReceitaManager.JogadorPegou("maçã"));
         comandos.Add("pegue maçã", () => ReceitaManager.JogadorPegou("maçã"));
@@ -334,7 +334,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pegar o saco de arroz", () => ReceitaManager.JogadorPegou("arroz"));
         comandos.Add("pegue o saco de arroz", () => ReceitaManager.JogadorPegou("arroz"));
 
-        //água
+        //?gua
         comandos.Add("pegar água", () => ReceitaManager.JogadorPegou("água"));
         comandos.Add("pegar a água", () => ReceitaManager.JogadorPegou("água"));
         comandos.Add("pegue água", () => ReceitaManager.JogadorPegou("água"));
@@ -362,7 +362,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pega cebola", () => ReceitaManager.JogadorPegou("cebola"));
         comandos.Add("pega a cebola", () => ReceitaManager.JogadorPegou("cebola"));
 
-        //pão
+        //p?o
         comandos.Add("pegar pão", () => ReceitaManager.JogadorPegou("pão"));
         comandos.Add("pegar o pão", () => ReceitaManager.JogadorPegou("pão"));
         comandos.Add("pegue pão", () => ReceitaManager.JogadorPegou("pão"));
@@ -378,7 +378,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pega alho", () => ReceitaManager.JogadorPegou("alho"));
         comandos.Add("pega o alho", () => ReceitaManager.JogadorPegou("alho"));
 
-        //limão
+        //limao
         comandos.Add("pegar limão", () => ReceitaManager.JogadorPegou("limão"));
         comandos.Add("pegar o limão", () => ReceitaManager.JogadorPegou("limão"));
         comandos.Add("pegue limão", () => ReceitaManager.JogadorPegou("limão"));
@@ -449,7 +449,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("pegar a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
         comandos.Add("pegue a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
         comandos.Add("pega a garrafa de azeite", () => ReceitaManager.JogadorPegou("azeite"));
-        
+
 
         // Comando de finalizar
         comandos.Add("finalizar receita", () => ReceitaManager.FinalizarReceita());
@@ -465,7 +465,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("encerra receita", () => ReceitaManager.FinalizarReceita());
         comandos.Add("encerra a receita", () => ReceitaManager.FinalizarReceita());
 
-        // --- Comandos para abrir informações ---
+        // --- Comandos para abrir informacoes ---
         comandos.Add("abrir informacoes", acaoAbrirInformacoes);
         comandos.Add("abrir informações", acaoAbrirInformacoes);
         comandos.Add("abrir as informacoes", acaoAbrirInformacoes);
@@ -475,7 +475,7 @@ public class VoiceCommandManager : MonoBehaviour
         comandos.Add("abre informacoes", acaoAbrirInformacoes);
         comandos.Add("abre informações", acaoAbrirInformacoes);
 
-        // --- Comandos para fechar informações ---
+        // --- Comandos para fechar informacoes ---
         comandos.Add("fechar informacoes", acaoFecharInformacoes);
         comandos.Add("fechar informações", acaoFecharInformacoes);
         comandos.Add("fechar as informacoes", acaoFecharInformacoes);
@@ -489,7 +489,7 @@ public class VoiceCommandManager : MonoBehaviour
 
 
 
-        // --- Inicialização do KeywordRecognizer ---
+        // --- Inicializacao do KeywordRecognizer ---
         string[] keywords = comandos.Keys.ToArray();
         if (keywords.Length == 0)
         {
@@ -500,7 +500,7 @@ public class VoiceCommandManager : MonoBehaviour
         Debug.Log("VoiceCommandManager: Tentando inicializar KeywordRecognizer com " + keywords.Length + " comandos.");
         foreach (string keyword in keywords)
         {
-           // Debug.Log("Comando registrado: " + keyword);
+            // Debug.Log("Comando registrado: " + keyword);
         }
 
         reconhecedor = new KeywordRecognizer(keywords);
@@ -523,15 +523,38 @@ public class VoiceCommandManager : MonoBehaviour
     private void OnReconhecerComando(PhraseRecognizedEventArgs args)
     {
         string recognizedText = args.text.ToLower();
-        Debug.Log("Você disse: '" + recognizedText + "' (Confiança: " + args.confidence + ")");
+        Debug.Log("Você disse: '" + recognizedText + "'");
+
+        
+        if (!PodeExecutarComandos())
+        {
+            
+            if (recognizedText.Contains("fechar") || recognizedText.Contains("feche") || recognizedText.Contains("fecha"))
+            {
+                if (comandos.ContainsKey(recognizedText))
+                    comandos[recognizedText].Invoke();
+            }
+            else
+            {
+                Debug.Log("Comandos bloqueados: painel aberto.");
+            }
+
+            return;
+        }
 
         if (comandos.ContainsKey(recognizedText))
         {
             comandos[recognizedText].Invoke();
         }
-        else
-        {
-            Debug.LogWarning("Comando reconhecido, mas não mapeado: '" + recognizedText + "'");
-        }
+    }
+    bool PodeExecutarComandos()
+    {
+        if (painelReceita != null && painelReceita.activeSelf)
+            return false;
+
+        if (painelInformacoes != null && painelInformacoes.activeSelf)
+            return false;
+
+        return true;
     }
 }

@@ -834,6 +834,7 @@ MonoBehaviour:
   cameraGeladeira: {fileID: 1106955517}
   cameraArmario: {fileID: 1948837716}
   ReceitaManager: {fileID: 1072838136}
+  painelInformacoes: {fileID: 0}
 --- !u!4 &41959361
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +862,7 @@ GameObject:
   - component: {fileID: 76383598}
   - component: {fileID: 76383597}
   - component: {fileID: 76383599}
+  - component: {fileID: 76383600}
   m_Layer: 0
   m_Name: Ovo
   m_TagString: Untagged
@@ -947,6 +949,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: ovo
+--- !u!65 &76383600
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76383595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.44916895, y: 0.45471692, z: 0.309861}
+  m_Center: {x: -0.000000283122, y: -0.0027743138, z: 0.098621935}
 --- !u!1 &242938254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,6 +4567,9 @@ MonoBehaviour:
   textoBotaoProximoNivel: {fileID: 1488844058}
   telefoneAudio: {fileID: 0}
   telefoneClip: {fileID: 0}
+  ingredientesCorretos: 0
+  ingredientesErrados: 0
+  vezesAbriuReceita: 0
 --- !u!4 &1072838137
 Transform:
   m_ObjectHideFlags: 0
@@ -4823,7 +4849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78, y: 31}
+  m_AnchoredPosition: {x: 78, y: -234}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1097155111
@@ -7416,10 +7442,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pontua\xE7\xE3o Final\r\n0 pontos"
+  m_text: "Pontua\xE7\xE3o Final - 0 pontos\nIngredientes Corretos - \nIngredientes
+    fora de ordem - \nReceita aberta \nTempo total"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7479,7 +7506,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -175.74054, z: -176.38379, w: -119.70007}
+  m_margin: {x: 0, y: -175.74054, z: -259.05765, w: -119.70007}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7502,14 +7529,14 @@ RectTransform:
   m_GameObject: {fileID: 1822151575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1155, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 951051626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 0}
+  m_AnchoredPosition: {x: 8, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1852224896
