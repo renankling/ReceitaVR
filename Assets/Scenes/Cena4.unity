@@ -830,6 +830,7 @@ MonoBehaviour:
   painelReceita: {fileID: 1905932596}
   animatorGeladeira: {fileID: 1449274303}
   animatorArmario: {fileID: 2096179408}
+  canvasPontuacao: {fileID: 951051622}
   cameraPrincipal: {fileID: 1427874808}
   cameraGeladeira: {fileID: 1106955517}
   cameraArmario: {fileID: 1948837716}
@@ -949,6 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: ovo
+  local: 1
 --- !u!65 &76383600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1224,6 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: banana
+  local: 0
 --- !u!1 &331712036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: cereal
+  local: 2
 --- !u!23 &610995612
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3310,6 +3314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: batata
+  local: 1
 --- !u!1 &753802807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,6 +3347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: abacaxi
+  local: 0
 --- !u!23 &753802809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3504,6 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "ma\xE7\xE3"
+  local: 0
 --- !u!1 &838639501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,6 +3608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: leite
+  local: 1
 --- !u!1 &839592939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,6 +4335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: refrigerante de uva
+  local: 1
 --- !u!1 &951051622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,6 +4541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: tomate
+  local: 0
 --- !u!1 &1072838135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,6 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: manteiga
+  local: 0
 --- !u!1 &1093478372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5272,6 +5283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: cebola
+  local: 1
 --- !u!1001 &1173495154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5609,6 +5621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: morango
+  local: 0
 --- !u!4 &1253538355 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4c20d741c7f2a443a059a23b4c1f34a, type: 3}
@@ -5632,6 +5645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: alho
+  local: 0
 --- !u!1001 &1339606101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6460,6 +6474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "p\xE3o"
+  local: 2
 --- !u!1 &1536129299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ece46becb4f3fc94fbef3386404e7fa7, type: 3}
@@ -6478,6 +6493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "lim\xE3o"
+  local: 0
 --- !u!1 &1591776835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,6 +6591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "\xF3leo"
+  local: 2
 --- !u!1 &1599855482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 065a9a2297fb82747b30f4bec3c8acf2, type: 3}
@@ -6674,6 +6691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: peixe
+  local: 1
 --- !u!4 &1677496252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 065a9a2297fb82747b30f4bec3c8acf2, type: 3}
@@ -6692,6 +6710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "\xE1gua de coco"
+  local: 1
 --- !u!1 &1740709216
 GameObject:
   m_ObjectHideFlags: 0
@@ -7657,6 +7676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: arroz
+  local: 2
 --- !u!23 &1857155570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7897,6 +7917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: azeite
+  local: 2
 --- !u!1001 &1926668585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8372,6 +8393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "\xE1gua"
+  local: 1
 --- !u!4 &2022907368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a3a050bf23b6fc4298a0da30eabd0bf, type: 3}
@@ -8459,6 +8481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: milho
+  local: 1
 --- !u!1 &2065212822
 GameObject:
   m_ObjectHideFlags: 0
@@ -9356,6 +9379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: farinha de trigo
+  local: 2
 --- !u!1 &2096179407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c1c728b7197ccd48b64f0f8dbd224d8, type: 3}
